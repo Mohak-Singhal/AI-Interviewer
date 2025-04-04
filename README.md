@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 AI Interviewer
 
-## Getting Started
+An AI-powered, **voice-based mock interview** platform that simulates realistic interview scenarios using **Google Gemini** and **Vapi Voice Agent**. Perfect for candidates preparing for job interviews, especially in technical and behavioral domains.
 
-First, run the development server:
+🌐 **Live Demo**: [ai-interviewer-mohak-singhals-projects.vercel.app](https://ai-interviewer-mohak-singhals-projects.vercel.app)  
+📂 **Source Code**: [GitHub](https://github.com/Mohak-Singhal/AI-Interviewer)
+
+---
+
+## 🧠 Features
+
+- 🗣️ **Voice Interaction**: Converse with the interviewer using your mic
+- 🤖 **Gemini-Powered AI**: Context-aware, dynamic interview questions
+- 🔁 **Follow-up Questions**: Adapts based on your previous responses
+- 🎯 **Focused Topics**: Customize your interview domain or type
+- 🌙 **Minimalist UI**: Clean, responsive design with Tailwind CSS
+- ⚡ **Fast and SEO-ready**: Built on Next.js, deployed via Vercel
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech        | Usage                                          |
+|-------------|------------------------------------------------|
+| **Next.js** | React-based frontend framework                 |
+| **Tailwind CSS** | For utility-first styling              |
+| **Gemini (Google AI)** | Interview generation + feedback     |
+| **Vapi**    | Voice interface for conversation               |
+| **Vercel**  | Hosting and deployment                         |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/Mohak-Singhal/AI-Interviewer.git
+cd AI-Interviewer
