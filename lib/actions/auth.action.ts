@@ -116,3 +116,7 @@ export async function isAuthenticated() {
 
     return !!user;
 }
+// export const function getInterviewByUserId(userId: string): Promise<Interview[]> {
+//   const interviews = await db
+
+// }
