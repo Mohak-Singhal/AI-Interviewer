@@ -17,26 +17,35 @@ export async function createFeedback(params: CreateFeedbackParams) {
       )
       .join("");
 
-    const { object } = await generateObject({
-      model: google("gemini-2.0-flash-001", {
-        structuredOutputs: false,
-      }),
-      schema: feedbackSchema,
-      prompt: `
-        You are an AI interviewer analyzing a mock interview. Your task is to evaluate the candidate based on structured categories. Be thorough and detailed in your analysis. Don't be lenient with the candidate. If there are mistakes or areas for improvement, point them out.
-        Transcript:
-        ${formattedTranscript}
-
-        Please score the candidate from 0 to 100 in the following areas. Do not add categories other than the ones provided:
-        - **Communication Skills**: Clarity, articulation, structured responses.
-        - **Technical Knowledge**: Understanding of key concepts for the role.
-        - **Problem-Solving**: Ability to analyze problems and propose solutions.
-        - **Cultural & Role Fit**: Alignment with company values and job role.
-        - **Confidence & Clarity**: Confidence in responses, engagement, and clarity.
+      const { object } = await generateObject({
+        model: google("gemini-2.0-flash-001", {
+          structuredOutputs: false,
+        }),
+        schema: feedbackSchema,
+        prompt: `
+          You are an AI interviewer analyzing a mock interview for a candidate aiming to crack FANG-level software engineering roles. Your task is to evaluate the candidate based on structured categories. Be detailed, honest, and critical in your evaluation. Do not be lenient. If the candidate makes errors, has knowledge gaps, or could have been more impressive, point those out specifically.
+      
+          For each category, provide:
+          - A score between 0 and 100
+          - A paragraph of detailed feedback with specific examples or observations from the transcript
+          - Actionable suggestions on how the candidate can improve, including best practices, habits, or resources
+          - Tips or strategies specifically useful for FANG interviews
+      
+          Transcript:
+          ${formattedTranscript}
+      
+          Please evaluate only the following categories. Do not add or remove any:
+          - **Communication Skills**: Clarity, articulation, structured responses.
+          - **Technical Knowledge**: Understanding of key concepts for the role.
+          - **Problem-Solving**: Ability to analyze problems and propose solutions.
+          - **Cultural & Role Fit**: Alignment with company values and job role.
+          - **Confidence & Clarity**: Confidence in responses, engagement, and clarity.
+      
+          Your response must include specific insights from the transcript and give clear, actionable advice. Avoid vague feedback.
         `,
-      system:
-        "You are a professional interviewer analyzing a mock interview. Your task is to evaluate the candidate based on structured categories",
-    });
+        system: "You are a professional mock interviewer trained by top-tier FANG companies. You evaluate candidates critically and coach them to meet FANG-level standards.",
+      });
+      
 
     const feedback = {
       interviewId: interviewId,
